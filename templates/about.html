@@ -22,7 +22,8 @@
     {% if loop.index % 2 != 0 %}
 
       <div class="col-md-7">
-        <h3>{{ loop.index }}. {{ member.name|e }}</h3>
+        <!-- <a href="/about/{{ member.url }}"></a> -->
+        <h3><a href="{{ url_for('about_member', member_name=member.url) }}">{{ loop.index }}. {{ member.name|e }}</a></h3>
         <p>{{ member.description|e }}</p>
       </div>
       <div class="col-md-5">
@@ -37,7 +38,7 @@
           class="featurette-image image-responsive" />
       </div>
       <div class="col-md-7">
-        <h3>{{ loop.index }}. {{ member.name|e }}</h3>
+        <h3><a href="/about/{{ member.url }}">{{ loop.index }}. {{ member.name|e }}</a></h3>
         <p>{{ member.description|e }}</p>
       </div>
 
